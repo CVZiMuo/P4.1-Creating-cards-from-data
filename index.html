@@ -19,18 +19,25 @@
   </head>
 
   <body>
+
     <header>
       <!-- place navbar here -->
+      <nav class="navbar bg-dark"> <!--Makes the navbar able to expand in big screens and the backgraound into a darker theme-->
+          <div class="container">
+              <span class="navbar-brand text-white">Marvel Heroes</span> <!--Applies the logo of the page-->
+          </div>
+        </nav>
     </header>
+
     <main>
       <!-- Aqui debeis crear vuestras cards etc, para meter los datos del json-->
 
       <!-- Here you have to create your cards , and some other elements, to insert the data from the json-->
 
       <!-- como ejemplo, os dejamos un acordeon ya creado, pero la estructura para mostrarlo es la que vosotros queráis
-           tened cuidado con los controles del acordeon-->
+          tened cuidado con los controles del acordeon-->
       <!-- as an example, we have created an accordeon, but you have to decide the structure to show the results 
-           be careful with the controlls of the accordeon-->
+          be careful with the controlls of the accordeon-->
 
       <div class="accordion" id="accordionExample">
         <div class="accordion-item">
@@ -104,8 +111,9 @@
         </div>
       </div>
     </main>
-    <footer>
-      <!-- place footer here -->
+
+    <footer class="bg-dark text-white text-center"> <!--Changed the background of the footer to dark, and making the text centered and white-->
+      Data provided by Marvel
     </footer>
     <!-- Bootstrap JavaScript Libraries -->
     <script
