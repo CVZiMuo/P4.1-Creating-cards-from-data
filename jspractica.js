@@ -25,21 +25,29 @@ function renderCards(jsondata) {
   const container = document.getElementById("heroes");
 
   for (let char of jsondata.data.results) {
-    // Create an empty div for this hero
+    // Create the card
     const card = document.createElement("div");
     card.className = "card";
-    card.style.width = "18rem"; // Same width for every card
+    card.style.width = "18rem";
 
-    // Fill the card with the hero's image, name and description
-    card.innerHTML = `
-      <img src="${char.thumbnail.path}/portrait_xlarge.${char.thumbnail.extension}"
-          class="card-img-top" alt="${char.name}" />
-      <div class="card-body">
-        <h5 class="card-title">${char.name}</h5>
-        <p class="card-text">${char.description}</p>
-      </div>`;
+    // Make a list with the names of the comics
+    let comics = "";
+    for (let comic of char.comics.items) {
+      comics += "<li>" + comic.name + "</li>";
+    }
+
+    // Fill the card: image, name, description and the comics button
+    card.innerHTML =
+      '<img src="' + char.thumbnail.path + "/portrait_xlarge." + char.thumbnail.extension + '" class="card-img-top">' +
+      '<div class="card-body">' +
+      '<h5 class="card-title">' + char.name + "</h5>" +
+      '<p class="card-text">' + char.description + "</p>" +
+      '<button class="btn btn-dark" data-bs-toggle="collapse" data-bs-target="#comics-' + char.id + '">Comics</button>' +
+      '<div class="collapse" id="comics-' + char.id + '"><ul>' + comics + "</ul></div>" +
+      "</div>";
 
     // Put the card inside the container
     container.appendChild(card);
   }
 }
+
