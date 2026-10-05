@@ -21,6 +21,20 @@ fetch("./data/heroes.json")
   });
 
 function renderCards(jsondata) {
+  // Find the container in the HTML
+  const container = document.getElementById("heroes");
+
   for (let char of jsondata.data.results) {
+    // Create an empty div for this hero
+    const card = document.createElement("div");
+    card.className = "card";
+
+    // Fill the card with the hero's name
+    card.innerHTML = `<div class="card-body">
+        <h5 class="card-title">${char.name}</h5>
+      </div>`;
+
+    // Put the card inside the container
+    container.appendChild(card);
   }
 }
