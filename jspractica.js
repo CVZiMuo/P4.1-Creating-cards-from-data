@@ -36,12 +36,18 @@ function renderCards(jsondata) {
       comics += "<li>" + comic.name + "</li>";
     }
 
+    // Use a default text if the hero has no description
+    let description = char.description;
+    if (description === "") {
+      description = "No description available";
+    }
+
     // Fill the card: image, name, description and the comics button
     card.innerHTML =
-      '<img src="' + char.thumbnail.path + "/portrait_xlarge." + char.thumbnail.extension + '" class="card-img-top">' +
+      '<img src="' + char.thumbnail.path + "/portrait_xlarge." + char.thumbnail.extension + '" class="card-img-top" alt="' + char.name + '">' +
       '<div class="card-body">' +
       '<h5 class="card-title">' + char.name + "</h5>" +
-      '<p class="card-text">' + char.description + "</p>" +
+      '<p class="card-text">' + description + "</p>" +
       '<button class="btn btn-dark" data-bs-toggle="collapse" data-bs-target="#comics-' + char.id + '">Comics</button>' +
       '<div class="collapse" id="comics-' + char.id + '"><ul>' + comics + "</ul></div>" +
       "</div>";
@@ -50,4 +56,3 @@ function renderCards(jsondata) {
     container.appendChild(card);
   }
 }
-
