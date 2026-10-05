@@ -28,10 +28,15 @@ function renderCards(jsondata) {
     // Create an empty div for this hero
     const card = document.createElement("div");
     card.className = "card";
+    card.style.width = "18rem"; // Same width for every card
 
-    // Fill the card with the hero's name
-    card.innerHTML = `<div class="card-body">
+    // Fill the card with the hero's image, name and description
+    card.innerHTML = `
+      <img src="${char.thumbnail.path}/portrait_xlarge.${char.thumbnail.extension}"
+          class="card-img-top" alt="${char.name}" />
+      <div class="card-body">
         <h5 class="card-title">${char.name}</h5>
+        <p class="card-text">${char.description}</p>
       </div>`;
 
     // Put the card inside the container

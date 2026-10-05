@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Title</title>
+    <title>Marvel heroes</title>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
@@ -22,11 +22,11 @@
 
     <header>
       <!-- place navbar here -->
-      <nav class="navbar bg-dark"> <!--Makes the navbar able to expand in big screens and the backgraound into a darker theme-->
-          <div class="container">
-              <span class="navbar-brand text-white">Marvel Heroes</span> <!--Applies the logo of the page-->
-          </div>
-        </nav>
+      <nav class="navbar bg-dark"> <!-- Bootstrap navbar with a dark background -->
+        <div class="container"> <!-- Centers the content -->
+          <span class="navbar-brand text-white">Marvel Heroes</span> <!-- Name of the page -->
+        </div>
+      </nav>
     </header>
 
     <main>
@@ -39,7 +39,7 @@
       <!-- as an example, we have created an accordeon, but you have to decide the structure to show the results 
           be careful with the controlls of the accordeon-->
 
-      <div id="heroes"></div>
+      <div id="heroes" class="d-flex flex-wrap gap-3 justify-content-center"></div>
       
       <div class="accordion" id="accordionExample">
         <div class="accordion-item">
